@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import random
+import news
+from sentiMental import *
 
 
 sources = [
@@ -55,9 +57,16 @@ def prove(title, sentiment, categories=[]):
         plt.title(title)
 
         fig.text(0.5, 0.05, source, ha='center')
-        fig.text(0.2, 0.05, random.choice(sources), ha='center')
+        #fig.text(0.2, 0.05, random.choice(sources), ha='center')
 
     plt.show()
 
-prove("Immigrants are stealing your jobs.", .2, categories=["jobs stolen before", "jobs stolen after"])
+#prove("Immigrants are stealing your jobs.", .2, categories=["jobs stolen before", "jobs stolen after"])
 
+if __name__ == '__main__':
+    headline = news.sentence()
+    title = get_title(headline)
+    sentiment = get_sentiment(headline)
+    cat1, cat2 = get_categories(headline)
+
+    prove(headline, sentiment, [cat1, cat2])
