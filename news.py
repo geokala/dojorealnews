@@ -37,7 +37,7 @@ def wordgen(m):
     if k == "object":
         return random.choice(OBJECTS)
     if k == "nn":
-        return str(random.randint(1, 19))
+        return str(random.randint(11, 19))
     return "balderdash"
 
 if __name__ == "__main__":
