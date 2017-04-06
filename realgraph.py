@@ -1,9 +1,9 @@
+#! /usr/bin/env python
 import matplotlib.pyplot as plt
 import numpy as np
 import random
 import news
 from sentiMental import *
-
 
 sources = [
 """
@@ -65,8 +65,10 @@ def prove(title, sentiment, categories=[]):
 
 if __name__ == '__main__':
     headline = news.sentence()
-    title = get_title(headline)
+    print(headline)
     sentiment = get_sentiment(headline)
+    print(sentiment)
     cat1, cat2 = get_categories(headline)
+    print(cat1, cat2)
 
     prove(headline, sentiment, [cat1, cat2])
